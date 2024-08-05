@@ -40,9 +40,9 @@ def split_image(imagen, num_parts):
 
 def apply_filter(imagen, filter_type):
     filters = {
-        'contour': ImageFilter.CONTOUR,
-        'edge_enhance_more': ImageFilter.EDGE_ENHANCE_MORE,
-        'emboss': ImageFilter.EMBOSS
+        'blur': ImageFilter.BLUR,
+        'detail': ImageFilter.DETAIL,
+        'find_edges': ImageFilter.FIND_EDGES,
     }
     return imagen.filter(filters[filter_type])
 
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
         width_part, height_part = parts[0].size
 
-        filters = ['contour', 'edge_enhance_more', 'emboss']
+        filters = ['blur', 'detail', 'find_edges']
 
         for index in range(args.num_parts):
             start = index * part_size
