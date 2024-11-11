@@ -1,4 +1,3 @@
-# server_async.py
 import asyncio
 import socket
 from PIL import Image

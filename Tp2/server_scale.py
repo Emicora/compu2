@@ -1,4 +1,3 @@
-# server_scale.py
 import socket
 import multiprocessing
 import socketserver
