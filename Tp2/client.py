@@ -8,12 +8,13 @@ async def send_image(image_path):
         writer.write(f.read())
     
     await writer.drain()
-    processed_data = await reader.read(10000)  # Ajusta el tamaño según sea necesario
+    processed_data = await reader.read(10000)
     
-    with open('imagen2.jpg', 'wb') as f:
+    with open('processed_image.jpg', 'wb') as f:
         f.write(processed_data)
     
     writer.close()
     await writer.wait_closed()
 
-asyncio.run(send_image('/home/emicoratolo/Escritorio/tp2Computacion/imagen.jpg'))
+# Ejecuta el cliente con la imagen de ejemplo
+asyncio.run(send_image('imagen.jpg'))
